@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hoverable Side Buttons with Menu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .side-buttons {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    .side-button {
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-color: #ff0000; /* Red */
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: width 0.3s;
+    }
+
+    .side-button:hover {
+      width: 100px;
+    }
+
+    .menu {
+      display: none;
+      width: 100px;
+      /* background-color: #ff0000; Red */
+      padding: 10px;
+      color: #fff;
+      font-size: 14px;
+      transition: opacity 0.3s;
+    }
+
+    .side-button:hover .menu {
+      display: block;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="side-buttons">
+    <div class="side-button">
+      <div class="menu">
+        Menu 1
+      </div>
+    </div>
+    <div class="side-button" style="background-color: #00ff00;"> <!-- Green -->
+      <div class="menu">
+        Menu 2
+      </div>
+    </div>
+    <div class="side-button" style="background-color: #0000ff;"> <!-- Blue -->
+      <div class="menu">
+        Menu 3
+      </div>
+    </div>
+    <div class="side-button" style="background-color: #ffff00;"> <!-- Yellow -->
+      <div class="menu">
+        Menu 4
+      </div>
+    </div>
+  </div>
+</body>
+</html>

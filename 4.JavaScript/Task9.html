@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    body {
+      background-color: rgb(150, 57, 150);
+      height: auto;
+      padding: 10%;
+      margin: 0;
+    }
+    table {
+      width: 100%;
+    }
+
+    table td {
+      padding: 5px;
+    }
+
+    table td.label {
+      text-align: right;
+      width: 120px;
+      font-weight: bold;
+    }
+
+    table td.field {
+      text-align: left;
+    }
+
+    .form-container {
+      background-color: rgb(37, 0, 37);
+      padding: 20px;
+      width: 100%;
+      color: white;
+    }
+
+    .form-container input[type='text'],
+    .form-container input[type='email'],
+    .form-container input[type='password'],
+    .form-container input[type='tel'],
+    .form-container select,
+    .form-container textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+
+    .form-container input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    .form-container textarea {
+      height: 100px;
+    }
+
+    .form-container button {
+      background-color: white;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background-color: hotpink;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      var nameInput = document.getElementById("name");
+      var emailInput = document.getElementById("email");
+      var passwordInput = document.getElementById("password");
+      var phoneInput = document.getElementById("phone");
+      var genderInputs = document.getElementsByName("gender");
+      var languageInput = document.getElementById("language");
+      var zipcodeInput = document.getElementById("zipcode");
+      var aboutInput = document.getElementById("about");
+
+      var inputs = [nameInput, emailInput, passwordInput, phoneInput, languageInput, zipcodeInput, aboutInput];
+
+      var isEmpty = false;
+
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].value.trim() === "") {
+          inputs[i].value = "";
+          inputs[i].placeholder = "This field is empty";
+          inputs[i].classList.add("error");
+          isEmpty = true;
+        } else {
+          inputs[i].classList.remove("error");
+        }
+      }
+
+      if (isEmpty) {
+        return false; // Prevent form submission
+      }
+    }
+  </script>
+</head>
+<body>
+    <div class="form-container">
+      <h2>Registration Form</h2>
+      <form onsubmit="return validateForm()">
+        <table>
+          <tr>
+            <td class="label"><label for="name">Name:</label></td>
+            <td class="field"><input type="text" id="name" name="name" placeholder="Enter your name"></td>
+          </tr>
+          <tr>
+            <td class="label"><label for="email">Email:</label></td>
+            <td class="field"><input type="email" id="email" name="email" placeholder="Enter your email"></td>
+          </tr>
+          <tr>
+            <td class="label"><label for="password">Password:</label></td>
+            <td class="field"><input type="password" id="password" name="password" placeholder="Enter your password"></td>
+          </tr>
+          <tr>
+            <td class="label"><label for="phone">Phone:</label></td>
+            <td class="field"><input type="tel" id="phone" name="phone" placeholder="Enter your phone number"></td>
+          </tr>
+          <tr>
+            <td class="label">Gender:</td>
+            <td class="field" style="display: flex; justify-content: center;">
+              <input type="radio" id="male" name="gender" value="male">
+              <label for="male">Male</label>
+              <input type="radio" id="female" name="gender" value="female">
+              <label for="female">Female</label>
+            </td>
+          </tr>
+          <tr>
+            <td class="label"><label for="language">Language:</label></td>
+            <td class="field">
+              <select id="language" name="language">
+                <option value="">Select a language</option>
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="label"><label for="zipcode">Zipcode:</label></td>
+            <td class="field"><input type="text" id="zipcode" name="zipcode" placeholder="Enter your zipcode"></td>
+          </tr>
+          <tr>
+            <td class="label"><label for="about">About:</label></td>
+            <td class="field"><textarea id="about" name="about" placeholder="Tell us about yourself"></textarea></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="field"><button type="submit">Register</button></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+  </html>

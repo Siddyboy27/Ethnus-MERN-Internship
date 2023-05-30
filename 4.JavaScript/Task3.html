@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form</title>
+  <style>
+    .error-message {
+      color: red;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var website = document.getElementById("website").value;
+      var message = document.getElementById("message").value;
+
+      var hasError = false;
+
+      if (name === "") {
+        document.getElementById("name").style.outline = "2px solid red";
+        document.getElementById("name-error").innerHTML = "Name field is required";
+        hasError = true;
+      } else {
+        document.getElementById("name").style.outline = "";
+        document.getElementById("name-error").innerHTML = "";
+      }
+
+      if (email === "") {
+        document.getElementById("email").style.outline = "2px solid red";
+        document.getElementById("email-error").innerHTML = "Email field is required";
+        hasError = true;
+      } else {
+        document.getElementById("email").style.outline = "";
+        document.getElementById("email-error").innerHTML = "";
+      }
+
+      if (website === "") {
+        document.getElementById("website").style.outline = "2px solid red";
+        document.getElementById("website-error").innerHTML = "Website field is required";
+        hasError = true;
+      } else {
+        document.getElementById("website").style.outline = "";
+        document.getElementById("website-error").innerHTML = "";
+      }
+
+      if (message === "") {
+        document.getElementById("message").style.outline = "2px solid red";
+        document.getElementById("message-error").innerHTML = "Message field is required";
+        hasError = true;
+      } else {
+        document.getElementById("message").style.outline = "";
+        document.getElementById("message-error").innerHTML = "";
+      }
+
+      if (hasError) {
+        return false;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Contact Form</h1>
+  <form onsubmit="return validateForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <span class="error-message" id="name-error"></span>
+    <br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <span class="error-message" id="email-error"></span>
+    <br><br>    
+    <label for="website">Website:</label>
+    <input type="text" id="website" name="website">
+    <span class="error-message" id="website-error"></span>
+    <br><br>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message"></textarea>
+    <span class="error-message" id="message-error"></span>
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

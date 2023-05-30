@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show Date and Time</title>
+  <script>
+    function showDate() {
+      var currentDate = new Date();
+      var day = currentDate.getDate();
+      var monthIndex = currentDate.getMonth();
+      var year = currentDate.getFullYear();
+
+      var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      var formattedDate = day + "/" + monthNames[monthIndex] + "/" + year;
+
+      document.getElementById("date").innerHTML = formattedDate;
+    }
+
+    function showTime() {
+      var currentTime = new Date();
+      document.getElementById("time").innerHTML =  currentTime;
+    }
+  </script>
+</head>
+<body>
+  <button onclick="showDate()">Show Date</button>
+  <p id="date"></p>
+
+  <button onclick="showTime()">Show Time</button>
+  <p id="time"></p>
+</body>
+</html>

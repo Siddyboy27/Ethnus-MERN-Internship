@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+  <style>
+    .login-container {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+    }
+
+    .login-container h2 {
+      text-align: center;
+    }
+
+    .login-container img {
+      display: block;
+      margin: 0 auto;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    .login-container label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    
+
+    .login-container .submit-button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 50%;
+      cursor: pointer;
+    }
+
+    .login-container .forgot-password {
+      text-align: center;
+    }
+
+    .login-container .forgot-password a {
+      color: blue;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login Form</h2>
+    <img src="./profile.png" alt="Profile Icon">
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username">
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password">
+        <div style="display: flex; align-items: center;">
+            <input type="submit" value="Submit" class="submit-button">
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+        </div>
+      
+    </form>
+    
+  </div>
+</body>
+</html>

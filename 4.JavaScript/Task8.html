@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animation Control</title>
+  <style>
+    #picture {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      animation-name: slide;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-play-state: paused; /* Added this line to set the default animation state */
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+  </style>
+  <script>
+    function startAnimation() {
+      var picture = document.getElementById("picture");
+      picture.style.animationPlayState = "running";
+    }
+
+    function stopAnimation() {
+      var picture = document.getElementById("picture");
+      picture.style.animationPlayState = "paused";
+    }
+  </script>
+</head>
+<body>
+  <h2>Animation Control</h2>
+  <div id="picture"></div>
+  <br>
+  <button onclick="startAnimation()">Start</button>
+  <button onclick="stopAnimation()">Stop</button>
+</body>
+</html>
