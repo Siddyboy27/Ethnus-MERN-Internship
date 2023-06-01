@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabular Form with Validation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+        .form-group .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+        .form-group.error input,
+        .form-group.error select {
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Tabular Form</h5>
+                        <form id="myForm">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" id="name" name="name" >
+                                <div class="error-message" id="nameError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" >
+                                <div class="error-message" id="emailError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control" id="password" name="password" >
+                                <div class="error-message" id="passwordError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="hobbies">Hobbies:</label>
+                                <select class="form-control" id="hobbies" name="hobbies" >
+                                    <option value="">Select</option>
+                                    <option value="reading">Reading</option>
+                                    <option value="writing">Writing</option>
+                                    <option value="painting">Painting</option>
+                                </select>
+                                <div class="error-message" id="hobbiesError"></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="background-color: red; width: 100%; border: none;" >Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var formValid = true;
+            
+            var nameField = document.getElementById('name');
+            var nameError = document.getElementById('nameError');
+            if (nameField.value.trim() === '') {
+                nameError.textContent = 'Name is required.';
+                nameField.parentNode.classList.add('error');
+                formValid = false;
+            } else {
+                nameError.textContent = '';
+                nameField.parentNode.classList.remove('error');
+            }
+            
+            var emailField = document.getElementById('email');
+            var emailError = document.getElementById('emailError');
+            if (emailField.value.trim() === '') {
+                emailError.textContent = 'Email is required.';
+                emailField.parentNode.classList.add('error');
+                formValid = false;
+            } else {
+                emailError.textContent = '';
+                emailField.parentNode.classList.remove('error');
+            }
+            
+            var passwordField = document.getElementById('password');
+            var passwordError = document.getElementById('passwordError');
+            if (passwordField.value.trim() === '') {
+                passwordError.textContent = 'Password is required.';
+                passwordField.parentNode.classList.add('error');
+                formValid = false;
+            } else {
+                passwordError.textContent = '';
+                passwordField.parentNode.classList.remove('error');
+            }
+            
+            var hobbiesField = document.getElementById('hobbies');
+            var hobbiesError = document.getElementById('hobbiesError');
+            if (hobbiesField.value.trim() === '') {
+                hobbiesError.textContent = 'Hobbies is required.';
+                hobbiesField.parentNode.classList.add('error');
+                formValid = false;
+            } else {
+                hobbiesError.textContent = '';
+                hobbiesField.parentNode.classList.remove('error');
+            }
+            
+            if (formValid) {
+                // Form submission logic
+                alert('Form submitted successfully!');
+            }
+        });
+    </script>
+</body>
+</html>

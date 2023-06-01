@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Material Cards with Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .card-description {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .card-link {
+            text-decoration: none;
+            color: orange;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card">
+                    <img src="https://picsum.photos/200/300" class="card-img-top" alt="Image 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Card 1</h5>
+                        <p class="card-description">This is the description for Card 1.</p>
+                        <a href="#" class="card-link">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card">
+                    <img src="https://picsum.photos/200/300" class="card-img-top" alt="Image 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Card 2</h5>
+                        <p class="card-description">This is the description for Card 2.</p>
+                        <a href="#" class="card-link">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card">
+                    <img src="https://picsum.photos/200/300" class="card-img-top" alt="Image 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Card 3</h5>
+                        <p class="card-description">This is the description for Card 3.</p>
+                        <a href="#" class="card-link">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card">
+                    <img src="https://picsum.photos/200/300" class="card-img-top" alt="Image 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Card 4</h5>
+                        <p class="card-description">This is the description for Card 4.</p>
+                        <a href="#" class="card-link">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

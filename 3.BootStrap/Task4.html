@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Page Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .navbar {
+            background-color: white;
+        }
+        .navbar-brand {
+            margin-right: auto;
+        }
+        .navbar-nav .nav-link {
+            border: none;
+        }
+        .signup-button {
+            background-color: white;
+            color: lightblue;
+            border: 1px solid lightblue;
+        }
+        .signup-button:hover {
+            background-color: lightblue;
+            color: white;
+        }
+        .pricing-heading {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .pricing-info {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .pricing-cards {
+            margin-top: 30px;
+        }
+        .pricing-card {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .pricing-price {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+        .pricing-perks {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .pricing-perk-item {
+            margin-bottom: 10px;
+        }
+        .signup-button-darkblue {
+            background-color: rgb(10, 66, 163);
+            color: white;
+        }
+        .signup-button-darkblue:hover {
+            background-color: white;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Company Name</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Feature</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Enterprise</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Support</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: rgb(0, 64, 255);border: rgb(0, 4, 255) 1px solid;" href="#">Signup</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <h1 class="pricing-heading">PRICING</h1>
+    
+    <div class="pricing-info">
+        <p>Three pricing plans to choose from:</p>
+    </div>
+    
+    <div class="container pricing-cards">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card pricing-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Free</h5>
+                        <div class="pricing-price">$0/mo</div>
+                        <div class="pricing-perks">
+                            <div class="pricing-perk-item">Perk 1</div>
+                            <div class="pricing-perk-item">Perk 2</div>
+                            <div class="pricing-perk-item">Perk 3</div>
+                        </div>
+                        <a href="#" class="btn signup-button-darkblue">Signup</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card pricing-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pro</h5>
+                        <div class="pricing-price">$49/mo</div>
+                        <div class="pricing-perks">
+                            <div class="pricing-perk-item">Perk 1</div>
+                            <div class="pricing-perk-item">Perk 2</div>
+                            <div class="pricing-perk-item">Perk 3</div>
+                        </div>
+                        <a href="#" class="btn signup-button-darkblue">Signup</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card pricing-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Enterprise</h5>
+                        <div class="pricing-price">$99/mo</div>
+                        <div class="pricing-perks">
+                            <div class="pricing-perk-item">Perk 1</div>
+                            <div class="pricing-perk-item">Perk 2</div>
+                            <div class="pricing-perk-item">Perk 3</div>
+                        </div>
+                        <a href="#" class="btn signup-button-darkblue">Signup</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

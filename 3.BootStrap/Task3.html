@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Form Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .red {
+            color: red;
+        }
+        .invalid-feedback {
+            display: none;
+        }
+        .invalid-feedback.show {
+            display: block;
+        }
+        .btn-send {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-person"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="firstname" name="firstname">
+                    <div class="invalid-feedback">
+                        <i class="bi bi-x red"></i> Please supply this field
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-person"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="lastname" name="lastname">
+                    <div class="invalid-feedback">
+                        <i class="bi bi-x red"></i> Please supply this field
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                    </div>
+                    <input type="email" class="form-control" id="email" name="email">
+                    <div class="invalid-feedback">
+                        <i class="bi bi-x red"></i> Please supply this field
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-phone"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="phone" name="phone">
+                    <div class="invalid-feedback">
+                        <i class="bi bi-x red"></i> Please supply this field
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-house"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="address" name="address">
+                    <div class="invalid-feedback">
+                        <i class="bi bi-x red"></i> Please supply this field
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="city" name="city">
+                    <div class="invalid-feedback">
+                        <i class="bi bi-x red"></i> Please supply this field
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-flag"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="state" name="state">
+                    <div class="invalid-feedback">
+                        <i class="bi bi-x red"></i> Please supply this field
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="question">Do you have Housing?</label>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="question" id="question-yes" value="yes">
+                        <label class="form-check-label" for="question-yes">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="question" id="question-no" value="no">
+                        <label class="form-check-label" for="question-no">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Project Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                <div class="invalid-feedback">
+                    <i class="bi bi-x red"></i> Please supply this field
+                </div>
+            </div>
+            <button type="button" class="btn btn-send">Send</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.btn-send').click(function() {
+                var form = $('#contact-form')[0];
+                var inputs = $(form).find('input, select, textarea');
+                var invalidFields = [];
+
+                inputs.each(function() {
+                    if ($(this).val() === '') {
+                        invalidFields.push($(this));
+                    }
+                });
+
+                if (invalidFields.length > 0) {
+                    invalidFields.forEach(function(field) {
+                        field.addClass('is-invalid');
+                        field.siblings('.invalid-feedback').addClass('show');
+                    });
+                } else {
+                    alert('Form submitted successfully!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
