@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, yellow, pink);
+        }
+        table {
+            margin: 50px auto;
+            border-collapse: collapse;
+        }
+        table td {
+            padding: 10px;
+        }
+        table label {
+            display: block;
+            font-weight: bold;
+        }
+        table input[type="text"],
+        table input[type="email"],
+        table input[type="password"],
+        table input[type="tel"] {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        table input[type="radio"],
+        table input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .error-message {
+            color: red;
+        }
+        .submit-button {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><label for="firstName">First Name:</label></td>
+                <td><input type="text" id="firstName" required></td>
+                <td class="error-message"></td>
+            </tr>
+            <tr>
+                <td><label for="lastName">Last Name:</label></td>
+                <td><input type="text" id="lastName" required></td>
+                <td class="error-message"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" required></td>
+                <td class="error-message"></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" id="password" required></td>
+                <td class="error-message"></td>
+            </tr>
+            <tr>
+                <td><label for="confirmPassword">Repeat Password:</label></td>
+                <td><input type="password" id="confirmPassword" required></td>
+                <td class="error-message"></td>
+            </tr>
+            <tr>
+                <td><label>Gender:</label></td>
+                <td>
+                    <input type="radio" id="male" name="gender" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" required>
+                    <label for="female">Female</label>
+                </td>
+                <td class="error-message"></td>
+            </tr>
+            <tr>
+                <td><label for="age">Age:</label></td>
+                <td><input type="number" id="age" required></td>
+                <td class="error-message"></td>
+            </tr>
+            <tr>
+                <td><label for="phone">Phone:</label></td>
+                <td><input type="tel" id="phone" required></td>
+                <td class="error-message"></td>
+            </tr>
+            <tr>
+                <td><label for="address">Address:</label></td>
+                <td><textarea id="address" required></textarea></td>
+                <td class="error-message"></td>
+            </tr>
+            <tr>
+                <td><label for="state">State:</label></td>
+                <td><input type="text" id="state" required></td>
+                <td class="error-message"></td>
+            </tr>
+            <tr>
+                <td><label for="country">Country:</label></td>
+                <td>
+                    <select id="country" required>
+                        <option value="">Select Country</option>
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                    </select>
+                </td>
+                <td class="error-message"></td>
+            </tr>
+            <tr>
+                <td><label>Language Known:</label></td>
+                <td>
+                    <input type="checkbox" id="english" name="language">
+                    <label for="english">English</label>
+                    <input type="checkbox" id="spanish" name="language">
+                    <label for="spanish">Spanish</label>
+                    <input type="checkbox" id="french" name="language">
+                    <label for="french">French</label>
+                </td>
+                <td class="error-message"></td>
+            </tr>
+            <tr>
+                <td><label for="declarativeCheckbox">Declarative Checkbox:</label></td>
+                <td><input type="checkbox" id="declarativeCheckbox" required></td>
+                <td class="error-message"></td>
+            </tr>
+        </table>
+        <div style="text-align: center;">
+            <button type="button" class="submit-button" onclick="validateForm()">Submit</button>
+        </div>
+    </form>
+
+    <script>
+        function validateForm() {
+            const form = document.querySelector('form');
+            const fields = form.querySelectorAll('input, select, textarea');
+            const errorMessages = form.querySelectorAll('.error-message');
+
+            // Reset error messages
+            errorMessages.forEach((errorMessage) => {
+                errorMessage.textContent = '';
+            });
+
+            // Check for empty fields and password mismatch
+            let hasErrors = false;
+
+            fields.forEach((field) => {
+                const errorMessage = field.parentElement.nextElementSibling;
+                if (field.required && field.value.trim() === '') {
+                    errorMessage.textContent = 'POOR';
+                    hasErrors = true;
+                }
+            });
+
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (password !== confirmPassword) {
+                const passwordErrorMessage = document.getElementById('password').parentElement.nextElementSibling;
+                const confirmPasswordErrorMessage = document.getElementById('confirmPassword').parentElement.nextElementSibling;
+                passwordErrorMessage.textContent = 'Mismatch';
+                confirmPasswordErrorMessage.textContent = 'Mismatch';
+                hasErrors = true;
+            }
+
+            // Scroll to the first error field
+            if (hasErrors) {
+                const firstErrorField = form.querySelector('.error-message:not(:empty)');
+                if (firstErrorField) {
+                    firstErrorField.previousElementSibling.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+    </script>
+</body>
+</html>

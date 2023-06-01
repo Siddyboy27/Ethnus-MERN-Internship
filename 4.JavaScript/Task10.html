@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="ArrayFuncs()">Click me</button>
+    <h3>Click the button and open the browser console to see the array functions</h3>
+</body>
+<script>
+    function ArrayFuncs()
+    {
+        let A=[1,2,3,4,5,6,7,8,10]
+        console.log(A);
+        A.map((num,index)=>{
+            console.log("Index: "+index+" Element: "+num);
+        })
+
+        console.log("Filtering only even numbers");
+
+        let B=A.filter((num)=>(num%2==0));
+        console.log(B);
+    }
+</script>
+</html>
